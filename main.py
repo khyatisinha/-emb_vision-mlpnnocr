@@ -64,13 +64,16 @@ def main():
    
    # >>>>> Create an instance of our class <<<<<
    mlpnnocr_inst = MlpnnOcr(data_directory);
+
+   # >>>>> Generate Training/Testing Data If It Does Not Exist <<<<<
+   if not os.path.exists(data_directory):
+      mlpnnocr_inst.genTrainingTestingData(nTrainSamples, maxCharLength, maxWordLength);
    
    # >>>>> Do stuff with it <<<<<
    mlpnnocr_inst.projectInfo();
-
-   # >>>>> Generate Training/Testing Data <<<<<
-   # NOTE: Do not run this again, already did, see '../data' directory.
-#   mlpnnocr_inst.genTrainingTestingData(nTrainSamples, maxCharLength, maxWordLength);
+   
+   # >>>>> Import Training/Testing Data <<<<<
+   mlpnnocr_inst.importTrainingTestingData();
 
    # >>>>> Program Finished! <<<<<
    print("Done!");
