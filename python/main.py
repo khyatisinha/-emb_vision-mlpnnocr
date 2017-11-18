@@ -39,6 +39,14 @@ import sklearn
 import cv2
 from mlpnnocr import MlpnnOcr
 
+# /////////////////////////////////////////////////////////////////////////////////////////////////////
+#                                        Configuration Variables
+# /////////////////////////////////////////////////////////////////////////////////////////////////////
+nTrainSamples  = 10000;
+maxCharLength  = 4;
+maxWordLength  = 3;
+data_directory = '../data';
+
 '''
 # //////////////////////////////////////////////////////////////////////////////////////////////////
 #                                               main()
@@ -55,15 +63,14 @@ from mlpnnocr import MlpnnOcr
 def main():
    
    # >>>>> Create an instance of our class <<<<<
-   mlpnnocr_inst = MlpnnOcr();
+   mlpnnocr_inst = MlpnnOcr(data_directory);
    
    # >>>>> Do stuff with it <<<<<
    mlpnnocr_inst.projectInfo();
-   
-   # >>>>> Generate 10 Random Images <<<<<
-   i = 0;
-   for i in range(0, 10):
-      mlpnnocr_inst.genTextImage(1200,250,4,3);
+
+   # >>>>> Generate Training/Testing Data <<<<<
+   # NOTE: Do not run this again, already did, see '../data' directory.
+#   mlpnnocr_inst.genTrainingTestingData(nTrainSamples, maxCharLength, maxWordLength);
 
    # >>>>> Program Finished! <<<<<
    print("Done!");
