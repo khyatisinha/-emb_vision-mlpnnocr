@@ -73,7 +73,12 @@ def main():
    mlpnnocr_inst.projectInfo();
    
    # >>>>> Import Training/Testing Data <<<<<
-   mlpnnocr_inst.importTrainingTestingData();
+#   mlpnnocr_inst.importTrainingTestingData();
+   
+   # >>>>> Train Neural Network <<<<<
+   tmp_img = mlpnnocr_inst.genRandomTextImage(maxCharLength,maxWordLength);
+   mlpnnocr_inst.dispImage(tmp_img['image'], 'Original: ' + ' '.join(tmp_img['words']));
+   mlpnnocr_inst.extractChars(tmp_img['image']);
 
    # >>>>> Program Finished! <<<<<
    print("Done!");
