@@ -77,8 +77,9 @@ def main():
    
    # >>>>> Train Neural Network <<<<<
    tmp_img = mlpnnocr_inst.genRandomTextImage(maxCharLength,maxWordLength);
-   mlpnnocr_inst.dispImage(tmp_img['image'], 'Original: ' + ' '.join(tmp_img['words']));
-   mlpnnocr_inst.extractChars(tmp_img['image']);
+   print(tmp_img['words']);
+   inv_char_img, charArr = mlpnnocr_inst.extractChars(tmp_img['image']);
+#   mlpnnocr_inst.dispImage(charArr, "subimages");
 
    # >>>>> Program Finished! <<<<<
    print("Done!");
