@@ -61,24 +61,31 @@ data_directory = '../data';
 # //////////////////////////////////////////////////////////////////////////////////////////////////
 '''
 def main():
-   
+
    # >>>>> Create an instance of our class <<<<<
    mlpnnocr_inst = MlpnnOcr(data_directory);
 
    # >>>>> Generate Training/Testing Data If It Does Not Exist <<<<<
    if not os.path.exists(data_directory):
       mlpnnocr_inst.genTrainingTestingData(nTrainSamples, maxCharLength, maxWordLength);
-   
+
    # >>>>> Do stuff with it <<<<<
    mlpnnocr_inst.projectInfo();
-   
+
    # >>>>> Import Training/Testing Data <<<<<
-#   mlpnnocr_inst.importTrainingTestingData();
+   mlpnnocr_inst.importTrainingTestingData();
+
+   # >>>>> Train Neural Network <<<<<
+   mlpnnocr_inst.buildTrainTestArrays();
+
+   # >>>>> Train Neural Network <<<<<
+   mlpnnocr_inst.trainNN();
    
    # >>>>> Train Neural Network <<<<<
-   tmp_img = mlpnnocr_inst.genRandomTextImage(maxCharLength,maxWordLength);
-   inv_char_img, subimages = mlpnnocr_inst.extractChars(tmp_img['image']);
-#   mlpnnocr_inst.dispImage(charArr, "subimages");
+   mlpnnocr_inst.testNN();
+   
+   # >>>>> Train Neural Network <<<<<
+   mlpnnocr_inst.classifyNN([]);
 
    # >>>>> Program Finished! <<<<<
    print("Done!");
