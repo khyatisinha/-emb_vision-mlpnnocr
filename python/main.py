@@ -46,6 +46,9 @@ nTrainSamples  = 10000;
 maxCharLength  = 4;
 maxWordLength  = 3;
 data_directory = '../data';
+nnShape        = (80,36);
+save_path      = '../model/mlpnnocr_model.pkl';
+
 
 '''
 # //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,16 +78,22 @@ def main():
    # >>>>> Import Training/Testing Data <<<<<
    mlpnnocr_inst.importTrainingTestingData();
 
-   # >>>>> Train Neural Network <<<<<
+   # >>>>> Build training/testing arrays <<<<<
    mlpnnocr_inst.buildTrainTestArrays();
 
-   # >>>>> Train Neural Network <<<<<
-   mlpnnocr_inst.trainNN();
+#   # >>>>> Create Neural Network <<<<<
+#   mlpnnocr_inst.createNN(nnShape);
+#   
+#   # >>>>> Train Neural Network <<<<<
+#   mlpnnocr_inst.trainNN(save_path);
+
+   # >>>>> Create Neural Network <<<<<
+   mlpnnocr_inst.loadNN(save_path);
    
-   # >>>>> Train Neural Network <<<<<
+   # >>>>> Test Neural Network <<<<<
    mlpnnocr_inst.testNN();
    
-   # >>>>> Train Neural Network <<<<<
+   # >>>>> Classify Something <<<<<
    mlpnnocr_inst.classifyNN([]);
 
    # >>>>> Program Finished! <<<<<
