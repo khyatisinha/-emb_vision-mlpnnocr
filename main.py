@@ -83,8 +83,8 @@ def main():
 
    # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.createNN(nnShape);
-#   
-#   # >>>>> Train Neural Network <<<<<
+   
+   # >>>>> Train Neural Network <<<<<
    mlpnnocr_inst.trainNN(save_path);
 
    # >>>>> Create Neural Network <<<<<
