@@ -81,7 +81,7 @@ def main():
    # >>>>> Build training/testing arrays <<<<<
    mlpnnocr_inst.buildTrainTestArrays();
 
-#   # >>>>> Create Neural Network <<<<<
+   # >>>>> Create Neural Network <<<<<
 #   mlpnnocr_inst.createNN(nnShape);
 #   
 #   # >>>>> Train Neural Network <<<<<
@@ -94,7 +94,8 @@ def main():
    mlpnnocr_inst.testNN();
    
    # >>>>> Classify Something <<<<<
-   mlpnnocr_inst.classifyNN([]);
+   randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
+   prediction  = mlpnnocr_inst.classifyNN(randExample['image'], randExample['words']);
 
    # >>>>> Program Finished! <<<<<
    print("Done!");
