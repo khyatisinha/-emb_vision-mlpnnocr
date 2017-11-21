@@ -82,10 +82,10 @@ def main():
    mlpnnocr_inst.buildTrainTestArrays();
 
    # >>>>> Create Neural Network <<<<<
-#   mlpnnocr_inst.createNN(nnShape);
+   mlpnnocr_inst.createNN(nnShape);
 #   
 #   # >>>>> Train Neural Network <<<<<
-#   mlpnnocr_inst.trainNN(save_path);
+   mlpnnocr_inst.trainNN(save_path);
 
    # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.loadNN(save_path);
