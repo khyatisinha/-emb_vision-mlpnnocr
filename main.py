@@ -46,7 +46,7 @@ nTrainSamples  = 10000;
 maxCharLength  = 4;
 maxWordLength  = 3;
 data_directory = '../data';
-nnShape        = (80,36);
+nnShape        = (10,10);  # good (80,36)
 save_path      = '../model/mlpnnocr_model.pkl';
 
 
@@ -76,22 +76,22 @@ def main():
    mlpnnocr_inst.projectInfo();
 
    # >>>>> Import Training/Testing Data <<<<<
-   mlpnnocr_inst.importTrainingTestingData();
+#   mlpnnocr_inst.importTrainingTestingData();
+#
+#   # >>>>> Build training/testing arrays <<<<<
+#   mlpnnocr_inst.buildTrainTestArrays();
 
-   # >>>>> Build training/testing arrays <<<<<
-   mlpnnocr_inst.buildTrainTestArrays();
-
-   # >>>>> Create Neural Network <<<<<
-   mlpnnocr_inst.createNN(nnShape);
-   
-   # >>>>> Train Neural Network <<<<<
-   mlpnnocr_inst.trainNN(save_path);
+#   # >>>>> Create Neural Network <<<<<
+#   mlpnnocr_inst.createNN(nnShape);
+#   
+#   # >>>>> Train Neural Network <<<<<
+#   mlpnnocr_inst.trainNN(save_path);
 
    # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.loadNN(save_path);
    
    # >>>>> Test Neural Network <<<<<
-   mlpnnocr_inst.testNN();
+#   mlpnnocr_inst.testNN();
    
    # >>>>> Classify Something <<<<<
    randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
