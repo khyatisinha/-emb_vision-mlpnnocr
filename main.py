@@ -76,22 +76,22 @@ def main():
    mlpnnocr_inst.projectInfo();
 
    # >>>>> Import Training/Testing Data <<<<<
-#   mlpnnocr_inst.importTrainingTestingData();
+   mlpnnocr_inst.importTrainingTestingData();
 #
 #   # >>>>> Build training/testing arrays <<<<<
-#   mlpnnocr_inst.buildTrainTestArrays();
+   mlpnnocr_inst.buildTrainTestArrays();
 
 #   # >>>>> Create Neural Network <<<<<
-#   mlpnnocr_inst.createNN(nnShape);
+   mlpnnocr_inst.createNN(nnShape);
 #   
 #   # >>>>> Train Neural Network <<<<<
-#   mlpnnocr_inst.trainNN(save_path);
+   mlpnnocr_inst.trainNN(save_path);
 
    # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.loadNN(save_path);
    
    # >>>>> Test Neural Network <<<<<
-#   mlpnnocr_inst.testNN();
+   mlpnnocr_inst.testNN();
    
    # >>>>> Classify Something <<<<<
    randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
