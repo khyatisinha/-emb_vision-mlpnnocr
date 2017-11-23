@@ -46,7 +46,7 @@ nTrainSamples  = 10000;
 maxCharLength  = 4;
 maxWordLength  = 3;
 data_directory = '../data';
-nnShape        = (10,10);  # good (80,36)
+nnShape        = (10);  # good (80,36)
 save_path      = '../model/mlpnnocr_model.pkl';
 
 
