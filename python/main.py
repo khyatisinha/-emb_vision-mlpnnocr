@@ -103,16 +103,16 @@ def main():
    mlpnnocr_inst.projectInfo();
 
    # >>>>> Import Training/Testing Data <<<<<
-#   mlpnnocr_inst.importTrainingTestingData(trainPercent);
+   mlpnnocr_inst.importTrainingTestingData(trainPercent);
 #
 #   # >>>>> Build training/testing arrays <<<<<
-#   mlpnnocr_inst.buildTrainTestArrays();
+   mlpnnocr_inst.buildTrainTestArrays();
 #
 #   # >>>>> Create Neural Network <<<<<
-#   mlpnnocr_inst.createNN(nnConfig);
+   mlpnnocr_inst.createNN(nnConfig);
 #   
 #   # >>>>> Train Neural Network <<<<<
-#   mlpnnocr_inst.trainNN(save_path);
+   mlpnnocr_inst.trainNN(save_path);
 #
 #   # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.loadNN(save_path);
