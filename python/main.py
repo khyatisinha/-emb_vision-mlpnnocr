@@ -67,7 +67,7 @@ nnConfig = {
 
 # >>>>> Demonstration Configuration <<<<<
 demoConfig = {
-              'n_demo_samples'    : 2        ,
+              'n_demo_samples'    : 20        ,
               'demo_period'       : 5.0      ,       # The amount of time between examples during demonstration
               'camera_pos'        : -1       ,       # Camera operating system position to use, if -1, no camera
               'resolution'        : (640,280),       # Camera resolution, if used in demo
@@ -103,22 +103,22 @@ def main():
    mlpnnocr_inst.projectInfo();
 
    # >>>>> Import Training/Testing Data <<<<<
-   mlpnnocr_inst.importTrainingTestingData(trainPercent);
-
-   # >>>>> Build training/testing arrays <<<<<
-   mlpnnocr_inst.buildTrainTestArrays();
-
-   # >>>>> Create Neural Network <<<<<
-   mlpnnocr_inst.createNN(nnConfig);
-   
-   # >>>>> Train Neural Network <<<<<
-   mlpnnocr_inst.trainNN(save_path);
-
-   # >>>>> Create Neural Network <<<<<
+#   mlpnnocr_inst.importTrainingTestingData(trainPercent);
+#
+#   # >>>>> Build training/testing arrays <<<<<
+#   mlpnnocr_inst.buildTrainTestArrays();
+#
+#   # >>>>> Create Neural Network <<<<<
+#   mlpnnocr_inst.createNN(nnConfig);
+#   
+#   # >>>>> Train Neural Network <<<<<
+#   mlpnnocr_inst.trainNN(save_path);
+#
+#   # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.loadNN(save_path);
 
    # >>>>> Test Neural Network <<<<<
-   mlpnnocr_inst.testNN();
+#   mlpnnocr_inst.testNN();
 
    # >>>>> Classify Something <<<<<
 #   randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
