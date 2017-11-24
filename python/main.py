@@ -56,11 +56,11 @@ alpha_chars        = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E
 # >>>>> Neural Network Configuration <<<<<
 nnConfig = {
             'solver'            : 'sgd'     ,        # Solver for weight optimization
-            'activation'        : 'tanh'    ,        # Activation method to use for neurons
-            'hidden_layer_sizes': (46,23,12,6),        # Neural network hidden layers and #of neurons in each
+            'activation'        : 'relu'    ,        # Activation method to use for neurons
+            'hidden_layer_sizes': (48,24,12),        # Neural network hidden layers and #of neurons in each
             'learning_rate'     : 'constant',        # Type of learning rate, constant, adaptive, and invscaling
             'learning_rate_init': 0.0009     ,        # Initial learning rate for stochastic gradient descent
-            'max_iter'          : 150       ,        # Number of epochs to train for, for 'sgd'
+            'max_iter'          : 120       ,        # Number of epochs to train for, for 'sgd'
             'momentum'          : 0.9       ,        # Helps keep weights moving in the same direction during training
             'shuffle'           : False              # Vectors already get randomly shuffled in buildTrainTestArrays
 };
