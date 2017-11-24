@@ -118,7 +118,7 @@ def main():
    mlpnnocr_inst.loadNN(save_path);
 
    # >>>>> Test Neural Network <<<<<
-#   mlpnnocr_inst.testNN();
+   mlpnnocr_inst.testNN();
 
    # >>>>> Classify Something <<<<<
 #   randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
