@@ -51,7 +51,7 @@ maxWordLength      = 3;                              # Maximum number of words i
 data_directory     = '../data';                      # Path to where training/testing images are
 save_path          = '../model/mlpnnocr_model.pkl';  # File to save trained neural network results to
 # Possible characters
-alpha_chars        = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','&','@','+','-'];
+alpha_chars        = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','&','@'];
 
 # >>>>> Neural Network Configuration <<<<<
 nnConfig = {
@@ -104,17 +104,17 @@ def main():
 
    # >>>>> Import Training/Testing Data <<<<<
    mlpnnocr_inst.importTrainingTestingData(trainPercent);
-#
-#   # >>>>> Build training/testing arrays <<<<<
+
+   # >>>>> Build training/testing arrays <<<<<
    mlpnnocr_inst.buildTrainTestArrays();
-#
-#   # >>>>> Create Neural Network <<<<<
+
+   # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.createNN(nnConfig);
-#   
-#   # >>>>> Train Neural Network <<<<<
+   
+   # >>>>> Train Neural Network <<<<<
    mlpnnocr_inst.trainNN(save_path);
-#
-#   # >>>>> Create Neural Network <<<<<
+
+   # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.loadNN(save_path);
 
    # >>>>> Test Neural Network <<<<<
