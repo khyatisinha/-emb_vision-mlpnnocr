@@ -45,7 +45,7 @@ from mlpnnocr import MlpnnOcr
 
 # >>>>> Training/Testing Configuration <<<<<
 trainPercent       = 70.0;                           # Percentage of samples to use for training
-nSamples           = 1000;                           # Total #of training/testing images to generated
+nSamples           = 10000;                           # Total #of training/testing images to generated
 maxCharLength      = 4;                              # Maximum number of characters in a word
 maxWordLength      = 3;                              # Maximum number of words in a generated image
 data_directory     = '../data';                      # Path to where training/testing images are
@@ -57,17 +57,17 @@ alpha_chars        = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E
 nnConfig = {
             'solver'            : 'sgd'     ,        # Solver for weight optimization
             'activation'        : 'relu'    ,        # Activation method to use for neurons
-            'hidden_layer_sizes': (40,50,20),        # Neural network hidden layers and #of neurons in each
+            'hidden_layer_sizes': (80, 40),     # Neural network hidden layers and #of neurons in each       # Good (80,50,40)
             'learning_rate'     : 'constant',        # Type of learning rate, constant, adaptive, and invscaling
-            'learning_rate_init': 0.0075     ,        # Initial learning rate for stochastic gradient descent
-            'max_iter'          : 120       ,        # Number of epochs to train for, for 'sgd'
+            'learning_rate_init': 0.001     ,        # Initial learning rate for stochastic gradient descent
+            'max_iter'          : 100       ,        # Number of epochs to train for, for 'sgd'
             'momentum'          : 0.9       ,        # Helps keep weights moving in the same direction during training
             'shuffle'           : False              # Vectors already get randomly shuffled in buildTrainTestArrays
 };
 
 # >>>>> Demonstration Configuration <<<<<
 demoConfig = {
-              'n_demo_samples'    : 20        ,
+              'n_demo_samples'    : 1        ,
               'demo_period'       : 5.0      ,       # The amount of time between examples during demonstration
               'camera_pos'        : -1       ,       # Camera operating system position to use, if -1, no camera
               'resolution'        : (640,280),       # Camera resolution, if used in demo
@@ -97,7 +97,7 @@ def main():
    
    # >>>>> Generate Training/Testing Data If It Does Not Exist <<<<<
    if not os.path.exists(data_directory):
-      mlpnnocr_inst.genTrainingTestingData(nSamples, maxCharLength, maxWordLength);
+      mlpnnocr_inst.genTrainingTestingData(nSamples, 1, 1);
 
    # >>>>> Do stuff with it <<<<<
    mlpnnocr_inst.projectInfo();
