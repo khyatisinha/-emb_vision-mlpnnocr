@@ -67,9 +67,9 @@ nnConfig = {
 
 # >>>>> Demonstration Configuration <<<<<
 demoConfig = {
-              'n_demo_samples'    : 2        ,
+              'n_demo_samples'    : 10        ,
               'demo_period'       : 0      ,       # The amount of time between examples during demonstration
-              'camera_pos'        : -1       ,       # Camera operating system position to use, if -1, no camera
+              'camera_pos'        : 0       ,       # Camera operating system position to use, if -1, no camera
               'resolution'        : (640,280),       # Camera resolution, if used in demo
               'max_char'          : maxCharLength,   # Maximum number of characters in a word
               'max_words'         : maxWordLength,   # Maximum number of words in demo examples
