@@ -57,7 +57,7 @@ alpha_chars        = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E
 nnConfig = {
             'solver'            : 'sgd'     ,        # Solver for weight optimization
             'activation'        : 'relu'    ,        # Activation method to use for neurons
-            'hidden_layer_sizes': (80, 40),     # Neural network hidden layers and #of neurons in each       # Good (80,50,40)
+            'hidden_layer_sizes': (80, 40),     # Neural network hidden layers and #of neurons in each       # Good (80,40)
             'learning_rate'     : 'constant',        # Type of learning rate, constant, adaptive, and invscaling
             'learning_rate_init': 0.001     ,        # Initial learning rate for stochastic gradient descent
             'max_iter'          : 100       ,        # Number of epochs to train for, for 'sgd'
