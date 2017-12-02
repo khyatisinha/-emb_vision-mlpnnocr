@@ -67,8 +67,8 @@ nnConfig = {
 
 # >>>>> Demonstration Configuration <<<<<
 demoConfig = {
-              'n_demo_samples'    : 1        ,
-              'demo_period'       : 5.0      ,       # The amount of time between examples during demonstration
+              'n_demo_samples'    : 2        ,
+              'demo_period'       : 0      ,       # The amount of time between examples during demonstration
               'camera_pos'        : -1       ,       # Camera operating system position to use, if -1, no camera
               'resolution'        : (640,280),       # Camera resolution, if used in demo
               'max_char'          : maxCharLength,   # Maximum number of characters in a word
@@ -102,27 +102,30 @@ def main():
    # >>>>> Do stuff with it <<<<<
    mlpnnocr_inst.projectInfo();
 
-   # >>>>> Import Training/Testing Data <<<<<
-   mlpnnocr_inst.importTrainingTestingData(trainPercent);
-
-   # >>>>> Build training/testing arrays <<<<<
-   mlpnnocr_inst.buildTrainTestArrays();
-
-   # >>>>> Create Neural Network <<<<<
-   mlpnnocr_inst.createNN(nnConfig);
+#   # >>>>> Import Training/Testing Data <<<<<
+#   mlpnnocr_inst.importTrainingTestingData(trainPercent);
+#
+#   # >>>>> Build training/testing arrays <<<<<
+#   mlpnnocr_inst.buildTrainTestArrays();
+#
+#   # >>>>> Create Neural Network <<<<<
+#   mlpnnocr_inst.createNN(nnConfig);
    
    # >>>>> Train Neural Network <<<<<
-   mlpnnocr_inst.trainNN(save_path);
+#   mlpnnocr_inst.trainNN(save_path);
 
    # >>>>> Create Neural Network <<<<<
    mlpnnocr_inst.loadNN(save_path);
 
    # >>>>> Test Neural Network <<<<<
-   mlpnnocr_inst.testNN();
+#   mlpnnocr_inst.testNN();
 
    # >>>>> Classify Something <<<<<
-#   randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
-#   prediction  = mlpnnocr_inst.classifyNN(randExample['image'] , randExample['words']);
+#   for i in range(0, 10):
+#      randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
+#      randExample['image'] = mlpnnocr_inst.randSkew(randExample['image']);
+#      mlpnnocr_inst.dispImage(randExample['image'], 'example %d' % i);
+#      prediction  = mlpnnocr_inst.classifyNN(randExample['image'] , randExample['words']);
    
    # >>>>> Demonstration <<<<<
    mlpnnocr_inst.demo(demoConfig);
