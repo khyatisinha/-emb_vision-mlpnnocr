@@ -67,10 +67,10 @@ nnConfig = {
 
 # >>>>> Demonstration Configuration <<<<<
 demoConfig = {
-              'n_demo_samples'    : 2        ,
-              'demo_period'       : 0      ,       # The amount of time between examples during demonstration
-              'camera_pos'        : 0       ,       # Camera operating system position to use, if -1, no camera
-              'resolution'        : (640,280),       # Camera resolution, if used in demo
+              'n_demo_samples'    : 10000        ,   # Only needed for Windows, to prevent sklearn fortran from crashing command prompt.
+              'demo_period'       : 0.001        ,   # The amount of time between examples during demonstration
+              'camera_pos'        : 0            ,   # Camera operating system position to use, if -1, no camera
+              'resolution'        : (640,280)    ,   # Camera resolution, if used in demo
               'max_char'          : maxCharLength,   # Maximum number of characters in a word
               'max_words'         : maxWordLength,   # Maximum number of words in demo examples
               'low_thresh'        : 120,             # Low threshold value for cv2.threshold();
@@ -119,13 +119,6 @@ def main():
 
    # >>>>> Test Neural Network <<<<<
 #   mlpnnocr_inst.testNN();
-
-   # >>>>> Classify Something <<<<<
-#   for i in range(0, 10):
-#      randExample = mlpnnocr_inst.genRandomTextImage(maxCharLength, maxWordLength);
-#      randExample['image'] = mlpnnocr_inst.randSkew(randExample['image']);
-#      mlpnnocr_inst.dispImage(randExample['image'], 'example %d' % i);
-#      prediction  = mlpnnocr_inst.classifyNN(randExample['image'] , randExample['words']);
    
    # >>>>> Demonstration <<<<<
    mlpnnocr_inst.demo(demoConfig);
