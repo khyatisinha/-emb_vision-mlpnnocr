@@ -67,14 +67,18 @@ nnConfig = {
 
 # >>>>> Demonstration Configuration <<<<<
 demoConfig = {
-              'n_demo_samples'    : 10000        ,   # Only needed for Windows, to prevent sklearn fortran from crashing command prompt.
-              'demo_period'       : 0.001        ,   # The amount of time between examples during demonstration
-              'camera_pos'        : 0            ,   # Camera operating system position to use, if -1, no camera
-              'resolution'        : (640,280)    ,   # Camera resolution, if used in demo
-              'max_char'          : maxCharLength,   # Maximum number of characters in a word
-              'max_words'         : maxWordLength,   # Maximum number of words in demo examples
-              'low_thresh'        : 120,             # Low threshold value for cv2.threshold();
-              'high_thresh'       : 255              # High threshold value for cv2.threshold();
+              'n_demo_samples'    : 2                ,   # Only needed for Windows, to prevent sklearn fortran from crashing command prompt.
+              'demo_period'       : 5.0               ,   # The amount of time between examples during demonstration
+              'camera_pos'        : -1                ,   # Camera operating system position to use, if -1, no camera
+              'resolution'        : (640,280)         ,   # Camera resolution, if used in demo
+              'max_char'          : 4                 ,   # Maximum number of characters in a word
+              'max_words'         : 3                 ,   # Maximum number of words in demo examples
+              'low_thresh'        : 120               ,   # Low threshold value for cv2.threshold();
+              'high_thresh'       : 255               ,    # High threshold value for cv2.threshold();
+              'make_video'        : False             ,
+              'video_resolution'  : (1220,460)        ,   # Camera resolution, if used in demo
+              'save_path'         : 'demo_random.avi' ,
+              'fps'               : 5.0
 };
 
 '''
@@ -102,15 +106,15 @@ def main():
    # >>>>> Do stuff with it <<<<<
    mlpnnocr_inst.projectInfo();
 
-#   # >>>>> Import Training/Testing Data <<<<<
-#   mlpnnocr_inst.importTrainingTestingData(trainPercent);
-#
-#   # >>>>> Build training/testing arrays <<<<<
-#   mlpnnocr_inst.buildTrainTestArrays();
-#
+   # >>>>> Import Training/Testing Data <<<<<
+   mlpnnocr_inst.importTrainingTestingData(trainPercent);
+
+   # >>>>> Build training/testing arrays <<<<<
+   mlpnnocr_inst.buildTrainTestArrays();
+
 #   # >>>>> Create Neural Network <<<<<
 #   mlpnnocr_inst.createNN(nnConfig);
-   
+
    # >>>>> Train Neural Network <<<<<
 #   mlpnnocr_inst.trainNN(save_path);
 
@@ -118,10 +122,10 @@ def main():
    mlpnnocr_inst.loadNN(save_path);
 
    # >>>>> Test Neural Network <<<<<
-#   mlpnnocr_inst.testNN();
-   
+   mlpnnocr_inst.testNN();
+
    # >>>>> Demonstration <<<<<
-   mlpnnocr_inst.demo(demoConfig);
+#   mlpnnocr_inst.demo(demoConfig);
 
    # >>>>> Program Finished! <<<<<
    print("Done!");
